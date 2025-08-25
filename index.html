@@ -1,18 +1,36 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Termicelli - Browser Seri al dente</title>
+  <meta charset="UTF-8">
+  <title>Termicelli - Seri al dente</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Termicelli</h1>
-    <button id="connectBtn">Connect</button>
-  <main id="terminal">
-    <div>[ Not connected ]</div>
+<body class="bg-gray-900 text-gray-100 font-mono h-screen flex flex-col">
+
+  <header class="p-4 bg-gray-800 flex items-center justify-between shadow">
+    <h1 class="text-xl font-bold">🍜 Termicelli</h1>
+    <div class="flex items-center gap-2">
+      <select id="baudRate" class="bg-gray-700 text-white px-2 py-1 rounded">
+        <option value="6969">6969</option>
+        <option value="9600">9600</option>
+        <option value="19200">19200</option>
+        <option value="38400">38400</option>
+        <option value="57600">57600</option>
+        <option value="115200" selected>115200</option>
+      </select>
+      <button id="connectBtn" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded">Connect</button>
+    </div>
+  </header>
+
+  <main class="flex-1 overflow-auto p-4" id="terminal">
+    <div class="text-gray-500">[ Not c0nnected ]</div>
   </main>
 
-
-  <footer>
-    <input id="inputField" type="text" placeholder="command....">
-    <button id="sendBtn">Send</button>
+  <footer class="p-4 bg-gray-800 flex gap-2">
+    <input id="inputField" type="text" placeholder="Type command..."
+      class="flex-1 bg-gray-700 text-white px-4 py-2 rounded outline-none" disabled>
+    <button id="sendBtn" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded" disabled>Send</button>
   </footer>
 
   <script src="pasta.js"></script>
